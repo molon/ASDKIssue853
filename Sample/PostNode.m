@@ -30,7 +30,6 @@
         _nameNode = [[ASTextNode alloc] init];
         _nameNode.attributedString = [[NSAttributedString alloc] initWithString:_post.name
                                                                      attributes:[TextStyles nameStyle]];
-        _nameNode.maximumLineCount = 1;
         [self addSubnode:_nameNode];
         
         // username node
@@ -39,7 +38,6 @@
                                                                      attributes:[TextStyles usernameStyle]];
         _usernameNode.flexShrink = YES; //if name and username don't fit to cell width, allow username shrink
         _usernameNode.truncationMode = NSLineBreakByTruncatingTail;
-        _usernameNode.maximumLineCount = 1;
         
         [self addSubnode:_usernameNode];
         
@@ -160,10 +158,18 @@
         
 #warning !!!! molon add!!!!
         _customNode = [[ASDisplayNode alloc]initWithViewBlock:^UIView *{
-            UILabel *label = [[UILabel alloc]init];
-            label.backgroundColor = [UIColor colorWithWhite:0.692 alpha:1.000];
-            label.text = @"Hello World!";
-            return label;
+//            UILabel *label = [[UILabel alloc]init];
+//            label.backgroundColor = [UIColor colorWithWhite:0.692 alpha:1.000];
+//            label.text = @"Hello World!";
+        
+//            UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+//        indicator.backgroundColor = [UIColor yellowColor];
+//        [indicator startAnimating];
+        
+            UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"icon_liked"]];
+            imageView.contentMode = UIViewContentModeScaleAspectFit;
+            imageView.backgroundColor = [UIColor lightGrayColor];
+            return imageView;
         }];
         _customNode.preferredFrameSize = CGSizeMake(100, 50);
         [self addSubnode:_customNode];
