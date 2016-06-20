@@ -14,6 +14,14 @@
 #import "LikesNode.h"
 #import "CommentsNode.h"
 
+@interface MLImageView : UIImageView
+
+@end
+
+@implementation MLImageView
+
+@end
+
 @implementation PostNode{
     ASDisplayNode *_customNode;
 }
@@ -161,12 +169,13 @@
 //            UILabel *label = [[UILabel alloc]init];
 //            label.backgroundColor = [UIColor colorWithWhite:0.692 alpha:1.000];
 //            label.text = @"Hello World!";
-        
+//            return label;
+            
 //            UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 //        indicator.backgroundColor = [UIColor yellowColor];
 //        [indicator startAnimating];
         
-            UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"icon_liked"]];
+            MLImageView *imageView = [[MLImageView alloc]initWithImage:[UIImage imageNamed:@"icon_liked"]];
             imageView.contentMode = UIViewContentModeScaleAspectFit;
             imageView.backgroundColor = [UIColor lightGrayColor];
             return imageView;
